@@ -11,13 +11,24 @@ module.exports = function(grunt) {
           src: 'src/<%= pkg.name %>.js',
           dest: 'build/<%= pkg.name %>.min.js'
         }
+      },
+      concat: {
+        dist: {
+          src: [
+              'js/*.js', // tous les JS dans /js
+          ],
+          dest: 'js/build/gui.js'
+        }
       }
     });
   
     // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks('grunt-contrib-uglify');
+
+    grunt.loadNpmTasks('grunt-contrib-concat');
   
     // Default task(s).
     grunt.registerTask('default', ['uglify']);
+    grunt.registerTask('default', ['concat']);
   
 };

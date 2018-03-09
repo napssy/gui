@@ -16,6 +16,4 @@ var guiPanel = function(params){
     GUIchilds.push(this);
     return this;
 }
-guiPanel.prototype.updateValue = function(){
-    //console.log('yeah');
-}
+guiPanel.prototype.updateValue = function(){}
